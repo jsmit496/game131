@@ -1,12 +1,17 @@
 @echo off
 
 set initialize=%1
-set username=%2
-set password=%3
+set usernameemail=%2
+set display1=%3
+set 2usernameemail=%4
+set display2=%5
 
-echo username: %2
-echo password: %3
-
-IF %1=="initialize" (
-	
+IF "%1"=="initialize" (
+	echo pizza
+	IF "%2"=="username" (
+		echo username: %3
+		
+	) ELSE IF "%2"=="email" (
+		echo email: %3
+	)
 )
