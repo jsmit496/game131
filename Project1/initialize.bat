@@ -7,9 +7,9 @@ REM think about how to "check out" a development branch
 
 REM For the updater (different document) I want the user to write:
 REM (update) to pull commits from the remote repository and merge them into the local
-REM if their local is not commited then this tool cannot update unless they commit or revert the merge focuses on "theirs"
+REM if their local is not committed then this tool cannot update unless they commit or revert the merge focuses on "theirs"
 
-REM For the Commiter (different document) I want the user to write:
+REM For the Committer (different document) I want the user to write:
 REM (commit) to commit and push all of their changes
 
 REM For the Reverter (different document) I want the user to write:
