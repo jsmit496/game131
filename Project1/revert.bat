@@ -15,8 +15,3 @@ IF %yesOrNo%==Y	(
 ) ELSE (
 	echo revert cancelled
 )
-
-
-
-
-
