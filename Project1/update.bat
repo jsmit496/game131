@@ -12,7 +12,7 @@ set display1=%2
 set 2usernameemail=%3
 set display2=%4
 
-call git.exe 
+call git
 
 
 
