@@ -12,6 +12,8 @@ set /P yesOrNo=Are you sure you want to reset to the last commit (Y/N)?
 IF %yesOrNo%==Y	(
 	call git reset --hard
 	endlocal
+) ELSE (
+	echo revert cancelled
 )
 
 
