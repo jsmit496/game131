@@ -9,6 +9,9 @@ REM if their local is not committed then this tool cannot update unless they com
 
 REM this should get commits and merge them (test at home).
 REM figure out how to check if they have commit problems and solve it according to guidelines.
+
+REM testing the update function with this line of text.
+
 call git fetch --all
 call git merge
 
