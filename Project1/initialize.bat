@@ -20,7 +20,7 @@ If %1==repository (
 	call git pull --all
 	call git branch Development
 	call git checkout Development
-	GOTO end
+	GOTO:ending
 )
 
 REM config the name and email (initialize name <name> email <email>)
@@ -32,7 +32,7 @@ If %1==name (
 		echo user.email is set to %4
 		GOTO ending
 	) ELSE (
-		GOTO ending
+		GOTO:ending
 	)
 	
 )
@@ -46,7 +46,7 @@ IF %1==email (
 		echo user.name is set to %4
 		GOTO ending
 	) ELSE (
-		GOTO ending
+		GOTO:ending
 	)
 	
 )
