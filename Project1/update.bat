@@ -10,11 +10,7 @@ REM if their local is not committed then this tool cannot update unless they com
 REM this should get commits and merge them (test at home).
 REM figure out how to check if they have commit problems and solve it according to guidelines.
 
-<<<<<<< HEAD
 REM test#4
-=======
-REM test#2
->>>>>>> refs/remotes/origin/master
 
 call git fetch --all
 call git merge -X theirs
