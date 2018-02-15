@@ -13,7 +13,7 @@ REM figure out how to check if they have commit problems and solve it according 
 REM test#2
 
 call git fetch --all
-call git merge
+call git merge -X theirs
 
 
 
