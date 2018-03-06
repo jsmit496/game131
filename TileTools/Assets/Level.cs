@@ -45,13 +45,16 @@ public class Level : MonoBehaviour
             //print(sprites.Length);
             SpriteRenderer currentSpriteRenderer = sprites[i];
             Sprite currentSprite = currentSpriteRenderer.sprite;
-            Vector3 currentSpriteCenterWorld = currentSprite.pivot;
-            //print(currentSpriteCenter);
-            Vector3 currentSpriteCenterGrid = new Vector3();
+            Vector3 currentSpriteCenterWorld = currentSpriteRenderer.bounds.min;
+            print(currentSprite.name + " is at position " + currentSpriteCenterWorld);
 
             //How to read "center of sprite is within a grid space"
             //and then lock its corner to the proper grid corner
-
+            Vector3 currentSpriteCenterGrid = new Vector3(Mathf.FloorToInt(currentSpriteCenterWorld.x / gridSpaceSize) * gridSpaceSize,
+                                                  Mathf.FloorToInt(currentSpriteCenterWorld.y / gridSpaceSize) * gridSpaceSize,
+                                                  0);
+            //print(currentSpriteCenterGrid);
+            currentSpriteRenderer.transform.position = currentSpriteCenterGrid;
         }
     }
 }
