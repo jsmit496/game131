@@ -7,8 +7,13 @@ public class Level : MonoBehaviour
     public int rows = 10;
     public int cols = 25;
     public float gridSpaceSize = 2.1f;
+    public float totalTime = 60f;
+    public float gravity = -30f;
 
     public Color gridColor;
+
+    public AudioClip bgm;
+    public Sprite background;
 
 	// Use this for initialization
 	void Start ()
@@ -45,7 +50,7 @@ public class Level : MonoBehaviour
             //print(sprites.Length);
             SpriteRenderer currentSpriteRenderer = sprites[i];
             Sprite currentSprite = currentSpriteRenderer.sprite;
-            Vector3 currentSpriteCenterWorld = currentSpriteRenderer.bounds.min;
+            Vector3 currentSpriteCenterWorld = currentSpriteRenderer.bounds.center;
             print(currentSprite.name + " is at position " + currentSpriteCenterWorld);
 
             //How to read "center of sprite is within a grid space"
