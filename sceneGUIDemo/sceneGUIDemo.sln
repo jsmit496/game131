@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sceneGUIDemo", "sceneGUIDemo.csproj", "{EF755E36-2A66-A24C-9257-EC533E618112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sceneGUIDemo.Editor", "sceneGUIDemo.Editor.csproj", "{107C7754-2D8B-BFF9-296C-BE3C079C60EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF755E36-2A66-A24C-9257-EC533E618112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF755E36-2A66-A24C-9257-EC533E618112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF755E36-2A66-A24C-9257-EC533E618112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF755E36-2A66-A24C-9257-EC533E618112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107C7754-2D8B-BFF9-296C-BE3C079C60EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107C7754-2D8B-BFF9-296C-BE3C079C60EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107C7754-2D8B-BFF9-296C-BE3C079C60EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107C7754-2D8B-BFF9-296C-BE3C079C60EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
