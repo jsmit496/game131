@@ -24,6 +24,7 @@ public class LevelEditorWindow : EditorWindow
         if (GUILayout.Button("Create Cube"))
         {
             //1. get the asset's GUID
+            //Displays the GUID
             string[] cubeGuids = AssetDatabase.FindAssets("Sample Cube");
 
             StringBuilder guidBuilder = new StringBuilder();
@@ -32,21 +33,23 @@ public class LevelEditorWindow : EditorWindow
                 guidBuilder.AppendLine(cubeGuid);
             }
             UnityEngine.MonoBehaviour.print(guidBuilder.ToString());
-
+            
             if (cubeGuids.Length > 0)
             {
                 string trueCubeGuid = cubeGuids[0];
 
                 //2. Get the asset's path from the GUID
+                //Displays the GUID path
                 string assetPath = AssetDatabase.GUIDToAssetPath(trueCubeGuid);
                 UnityEngine.MonoBehaviour.print(assetPath);
-
-                //3. Fetch the boject
+                
+                //3. Fetch the object
+                //Creates and places the cube in the scene/hierarchy
                 GameObject cubeTemplate = AssetDatabase.LoadAssetAtPath(assetPath, typeof(GameObject)) as GameObject;
 
                 GameObject newCube = GameObject.Instantiate(cubeTemplate);
                 newCube.name = cubeTemplate.name;
-
+                
                 // Funsies = spawn in a line along X
                 Vector3 newCubePosition = newCube.transform.position;
                 newCubePosition.x = currentX;
