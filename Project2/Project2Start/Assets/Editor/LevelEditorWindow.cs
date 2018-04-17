@@ -16,16 +16,10 @@ public class LevelEditorWindow : EditorWindow
         customEditor.titleContent = new GUIContent("Level Editor");
     }
 
-    /* Use With Selecting Object In Inspector
-    private void OnEnable()
-    {
-        ArrayList sceneViews = SceneView.sceneViews;
-        if (sceneViews.Count > 0) (sceneViews[0] as SceneView).Focus();
-    }*/
-
     private void OnGUI()
     {
         CreateEditorButton("Create Target", "Target");
+        CreateEditorButton("Create WallBase", "wallBase 1");
     }
 
     public static void CreateEditorButton(string buttonName, string objectName)
