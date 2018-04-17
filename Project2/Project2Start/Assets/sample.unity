@@ -406,7 +406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4546271935935446, guid: 90c31c1c1a6a92f48acb5840759790d9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.0899992
+      value: 3.5899987
       objectReference: {fileID: 0}
     - target: {fileID: 4546271935935446, guid: 90c31c1c1a6a92f48acb5840759790d9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -436,18 +436,6 @@ Prefab:
       propertyPath: m_Name
       value: wallBase
       objectReference: {fileID: 0}
-    - target: {fileID: 4546271935935446, guid: 90c31c1c1a6a92f48acb5840759790d9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 181
-      objectReference: {fileID: 0}
-    - target: {fileID: 4546271935935446, guid: 90c31c1c1a6a92f48acb5840759790d9, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 4.981508
-      objectReference: {fileID: 0}
-    - target: {fileID: 4546271935935446, guid: 90c31c1c1a6a92f48acb5840759790d9, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.7789764
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90c31c1c1a6a92f48acb5840759790d9, type: 2}
   m_IsPrefabParent: 0
@@ -463,6 +451,7 @@ GameObject:
   - component: {fileID: 1556594576}
   - component: {fileID: 1556594575}
   - component: {fileID: 1556594577}
+  - component: {fileID: 1556594578}
   m_Layer: 0
   m_Name: wallBase (1)
   m_TagString: Untagged
@@ -521,7 +510,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556594572}
   m_LocalRotation: {x: -0, y: -0, z: -0.3191759, w: 0.9476955}
-  m_LocalPosition: {x: 0.74, y: -1.52, z: 0}
+  m_LocalPosition: {x: 0.64, y: -1.0199999, z: 0}
   m_LocalScale: {x: 3.6968193, y: 2.1473553, z: 2.1473553}
   m_Children: []
   m_Father: {fileID: 0}
@@ -581,5 +570,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61a2513c86adf0d4dbbf6f065829fe83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1556594578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1556594572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c642bab01fd5574c94bc806d37e85f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

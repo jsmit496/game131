@@ -10,11 +10,14 @@ using UnityEditor;
 public class BouncinessEditor : Editor
 {
     private ChangeBounciness _myTarget;
-    float newBounciness;
-    bool setStuff = false;
+    private float newBounciness;
+    private bool setStuff = false;
 
     private void OnEnable()
     {
+        ArrayList sceneViews = SceneView.sceneViews;
+        if (sceneViews.Count > 0) (sceneViews[0] as SceneView).Focus();
+
         _myTarget = (ChangeBounciness)this.target;
     }
 
@@ -26,16 +29,15 @@ public class BouncinessEditor : Editor
             setStuff = true;
         }
 
-        //EditorGUILayout.LabelField("Bounciness", _myTarget.GetComponent<BoxCollider2D>().sharedMaterial.bounciness.ToString());
-        EditorGUILayout.LabelField("Another Bounciness", this._myTarget.GetComponent<BoxCollider2D>().sharedMaterial.bounciness.ToString());
-        newBounciness = EditorGUILayout.FloatField("New Bounciness", newBounciness);
+        EditorGUILayout.LabelField("Bounciness", _myTarget.GetComponent<BoxCollider2D>().sharedMaterial.bounciness.ToString());
+        this.newBounciness = EditorGUILayout.FloatField("New Bounciness", newBounciness);
 
         bool applyChange = GUILayout.Button("Apply new bounciness");
         bool reset = GUILayout.Button("Reset");
 
         if (applyChange)
         {
-            this._myTarget.GetComponent<BoxCollider2D>().sharedMaterial.bounciness = newBounciness;
+            _myTarget.GetComponent<BoxCollider2D>().sharedMaterial.bounciness = this.newBounciness;
         }
         if (reset)
         {
