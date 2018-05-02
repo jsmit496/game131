@@ -12,7 +12,7 @@ public class LinkObjects : MonoBehaviour
 
     public Vector3 distanceBetween;
     public Vector3 difference;
-    public float defaultTrackSpeed;
+    public float trackSpeed;
     public float distance;
 
     // Use this for initialization
@@ -26,7 +26,7 @@ public class LinkObjects : MonoBehaviour
     {
         if (moveTowardsFirstPoint && distancePercent > 0)
         {
-            distancePercent -= 0.1f * Time.deltaTime;
+            distancePercent -= 0.1f * Time.deltaTime * trackSpeed;
             if (distancePercent <= 0)
             {
                 distancePercent = 0;
@@ -35,7 +35,7 @@ public class LinkObjects : MonoBehaviour
         }
         else if (!moveTowardsFirstPoint && distancePercent < 1)
         {
-            distancePercent += 0.1f * Time.deltaTime;
+            distancePercent += 0.1f * Time.deltaTime * trackSpeed;
             if (distancePercent >= 1)
             {
                 distancePercent = 1;

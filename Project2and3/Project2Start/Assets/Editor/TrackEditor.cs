@@ -7,34 +7,51 @@ using UnityEditor;
 public class TrackEditor : Editor
 {
     private LinkObjects _myTarget;
-    private float defaultTrackSpeed;
-    private float distancePercent;
-    private float distance;
-    private Vector3 difference;
-    private Vector3 positionForTrackObject;
+
+    private SerializedProperty ftrackSpeed;
+    private SerializedProperty fdistancePercent;
+    private SerializedProperty fdistance;
+    private SerializedProperty v3difference;
+    private SerializedProperty v3positionForTrackObjects;
+    private SerializedProperty objfirstTrackPoint;
+    private SerializedProperty objsecondTrackPoint;
+    private SerializedProperty objlinkedObject;
 
     private void OnEnable()
     {
         _myTarget = (LinkObjects)this.target;
+
+        ftrackSpeed = this.serializedObject.FindProperty("trackSpeed");
+        fdistancePercent = this.serializedObject.FindProperty("distancePercent");
+        fdistance = this.serializedObject.FindProperty("distance");
+        v3difference = this.serializedObject.FindProperty("difference");
+        v3positionForTrackObjects = this.serializedObject.FindProperty("distanceBetween");
+        objfirstTrackPoint = this.serializedObject.FindProperty("firstTrackPoint");
+        objsecondTrackPoint = this.serializedObject.FindProperty("secondTrackPoint");
+        objlinkedObject = this.serializedObject.FindProperty("linkedObject");
     }
 
     public override void OnInspectorGUI()
     {
-        defaultTrackSpeed = EditorGUILayout.FloatField("Default Track Speed", defaultTrackSpeed);
+        ftrackSpeed.floatValue = _myTarget.trackSpeed = EditorGUILayout.FloatField("Default Track Speed", _myTarget.trackSpeed);
 
-        _myTarget.firstTrackPoint = (GameObject)EditorGUILayout.ObjectField("First Track Point", _myTarget.firstTrackPoint, typeof(GameObject), true);
-        _myTarget.secondTrackPoint = (GameObject)EditorGUILayout.ObjectField("Second Track Point", _myTarget.secondTrackPoint, typeof(GameObject), true);
-        _myTarget.linkedObject = (GameObject)EditorGUILayout.ObjectField("Object Linked To Track", _myTarget.linkedObject, typeof(GameObject), true);
+        objfirstTrackPoint.objectReferenceValue = _myTarget.firstTrackPoint = (GameObject)EditorGUILayout.ObjectField("First Track Point", _myTarget.firstTrackPoint, typeof(GameObject), true);
+        objsecondTrackPoint.objectReferenceValue = _myTarget.secondTrackPoint = (GameObject)EditorGUILayout.ObjectField("Second Track Point", _myTarget.secondTrackPoint, typeof(GameObject), true);
+        objlinkedObject.objectReferenceValue = _myTarget.linkedObject = (GameObject)EditorGUILayout.ObjectField("Object Linked To Track", _myTarget.linkedObject, typeof(GameObject), true);
 
         //Calculate difference between points for object
+        EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Linked Object Position Slider");
-        _myTarget.distancePercent = EditorGUILayout.Slider(_myTarget.distancePercent, 0, 1);
-        _myTarget.distance = Vector3.Distance(_myTarget.firstTrackPoint.transform.position, _myTarget.secondTrackPoint.transform.position);
-        _myTarget.distance *= _myTarget.distancePercent;
-        _myTarget.difference = _myTarget.firstTrackPoint.transform.position - _myTarget.secondTrackPoint.transform.position;
-        _myTarget.difference = _myTarget.difference.normalized * _myTarget.distance;
-        _myTarget.distanceBetween = _myTarget.firstTrackPoint.transform.position - _myTarget.difference;
+        fdistancePercent.floatValue =  _myTarget.distancePercent = EditorGUILayout.Slider(_myTarget.distancePercent, 0, 1);
+        EditorGUILayout.EndHorizontal();
+        fdistance.floatValue = _myTarget.distance = Vector3.Distance(_myTarget.firstTrackPoint.transform.position, _myTarget.secondTrackPoint.transform.position);
+        fdistance.floatValue = _myTarget.distance *= _myTarget.distancePercent;
+        v3difference.vector3Value = _myTarget.difference = _myTarget.firstTrackPoint.transform.position - _myTarget.secondTrackPoint.transform.position;
+        v3difference.vector3Value = _myTarget.difference = _myTarget.difference.normalized * _myTarget.distance;
+        v3positionForTrackObjects.vector3Value = _myTarget.distanceBetween = _myTarget.firstTrackPoint.transform.position - _myTarget.difference;
 
-        _myTarget.linkedObject.transform.position = _myTarget.distanceBetween;
+        objlinkedObject.vector3Value = _myTarget.linkedObject.transform.position = _myTarget.distanceBetween;
+
+        this.serializedObject.ApplyModifiedProperties();
     }
 }
