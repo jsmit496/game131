@@ -264,22 +264,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 852efa99e5a7bf3489127e9687d5c75e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &576944350 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1695311300634790, guid: 90c31c1c1a6a92f48acb5840759790d9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1195166839}
---- !u!114 &576944351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 576944350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705397d1f045e854880b01b409f37a1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &784844459
 Prefab:
   m_ObjectHideFlags: 0
@@ -324,51 +308,6 @@ Prefab:
       propertyPath: linkedObject
       value: 
       objectReference: {fileID: 1556594572}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: distancePercent
-      value: 0.142
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: distanceBetween.x
-      value: 2.3242
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: distanceBetween.y
-      value: 3.50686
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: difference.x
-      value: -0.0142000215
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: difference.y
-      value: 0.66314006
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: distance
-      value: 0.66329205
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: moveTowardsFirstPoint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: defaultTrackSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114307924733115220, guid: 2a6aee4cc2548bb4d91ed033233ce649,
-        type: 2}
-      propertyPath: trackSpeed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a6aee4cc2548bb4d91ed033233ce649, type: 2}
   m_IsPrefabParent: 0
@@ -560,6 +499,7 @@ GameObject:
   - component: {fileID: 1556594575}
   - component: {fileID: 1556594577}
   - component: {fileID: 1556594578}
+  - component: {fileID: 1556594579}
   m_Layer: 0
   m_Name: wallBase (1)
   m_TagString: Untagged
@@ -618,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556594572}
   m_LocalRotation: {x: -0, y: -0, z: -0.3191759, w: 0.9476955}
-  m_LocalPosition: {x: 2.3242, y: 3.50686, z: 0}
+  m_LocalPosition: {x: 2.3882, y: 0.51805997, z: 0}
   m_LocalScale: {x: 3.6968193, y: 1.8473554, z: 2.1473553}
   m_Children: []
   m_Father: {fileID: 0}
@@ -691,3 +631,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c642bab01fd5574c94bc806d37e85f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1556594579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1556594572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705397d1f045e854880b01b409f37a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTrackSpeed: 5

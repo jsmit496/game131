@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50248101479742634}
   - component: {fileID: 114574773839756704}
   - component: {fileID: 114866295466310452}
+  - component: {fileID: 114498381439533764}
   m_Layer: 0
   m_Name: wallBase 1
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695311300634790}
   m_LocalRotation: {x: 0, y: 0, z: -0.2931982, w: -0.9560517}
-  m_LocalPosition: {x: 2.31, y: 4.17, z: 0}
+  m_LocalPosition: {x: -2.63, y: 3.49, z: 0}
   m_LocalScale: {x: 4.981508, y: 2.7789764, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,6 +90,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114498381439533764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695311300634790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705397d1f045e854880b01b409f37a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTrackSpeed: 5
 --- !u!114 &114574773839756704
 MonoBehaviour:
   m_ObjectHideFlags: 1
