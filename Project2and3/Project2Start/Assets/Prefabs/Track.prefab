@@ -767,16 +767,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTrackPoint: {fileID: 1450948641879424}
-  firstTrackArrow: {fileID: 1361189624740138}
+  firstTrackArrow: {fileID: 1415876828796604}
   secondTrackPoint: {fileID: 1849770419977644}
   secondTrackArrow: {fileID: 1361189624740138}
   linkedObject: {fileID: 0}
-  distancePercent: 0.782
+  distancePercent: 0.375
   moveTowardsFirstPoint: 0
-  distanceBetween: {x: 2.3882, y: 0.51805997, z: 0}
-  difference: {x: -0.07820012, y: 3.65194, z: 0}
+  distanceBetween: {x: 2.3475, y: 2.41875, z: 0}
+  difference: {x: -0.037500057, y: 1.75125, z: 0}
   trackSpeed: 5
-  distance: 3.6527772
+  distance: 1.7516515
 --- !u!114 &114817167707497646
 MonoBehaviour:
   m_ObjectHideFlags: 1
