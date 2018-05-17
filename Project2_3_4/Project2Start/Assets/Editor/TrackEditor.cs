@@ -63,14 +63,11 @@ public class TrackEditor : Editor
 
         if (!setup)
         {
-            ftrackSpeed.floatValue = _myTarget.linkedObject.GetComponent<TrackSpeedDir>().defaultTrackSpeed;
+            if (_myTarget.linkedObject != null)
+            {
+                ftrackSpeed.floatValue = _myTarget.linkedObject.GetComponent<TrackSpeedDir>().defaultTrackSpeed;
+            }
             setup = true;
-        }
-
-        bool changeDir = GUILayout.Button("Change Start Direction");
-        if (changeDir)
-        {
-            changeStartDirection.boolValue = _myTarget.moveTowardsFirstPoint = !_myTarget.moveTowardsFirstPoint;
         }
 
         //Calculate difference between points for object
@@ -85,6 +82,12 @@ public class TrackEditor : Editor
         v3positionForTrackObjects.vector3Value = _myTarget.distanceBetween = _myTarget.firstTrackPoint.transform.position - _myTarget.difference;
 
         _myTarget.linkedObject.transform.position = v3positionForTrackObjects.vector3Value;
+
+        bool changeDir = GUILayout.Button("Change Start Direction", GUILayout.Width(200));
+        if (changeDir)
+        {
+            changeStartDirection.boolValue = _myTarget.moveTowardsFirstPoint = !_myTarget.moveTowardsFirstPoint;
+        }
 
         this.serializedObject.ApplyModifiedProperties();
     }
